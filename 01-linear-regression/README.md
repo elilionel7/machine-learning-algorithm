@@ -5,7 +5,9 @@ minimising squared error with gradient descent.
 
 Work through [`01_linear_regression.ipynb`](01_linear_regression.ipynb) first — it derives
 everything and plots it. [`linear_regression.py`](linear_regression.py) is the clean
-version of the same code.
+version of the same code. [`01_exercise_solutions.ipynb`](01_exercise_solutions.ipynb) works
+the five end-of-lesson exercises: the two classic gradient-descent bugs, mean absolute
+error and outliers, stopping criteria, polynomial features, and SGD.
 
 ## The four formulas
 
@@ -53,6 +55,10 @@ model.history["cost"]      # learning curve
   $\alpha = 10^{-7}$ and $\alpha = 0.1$.
 - Compute $\mu, \sigma$ on training data only, then reuse them on test data.
 - MSE is convex here, so there is exactly one minimum — no local optima to worry about.
+- A gradient check validates the **gradient**, not the **optimiser**. Bugs in the update
+  loop sail straight past it (exercise 1).
+- The loss is a modelling choice: squared error treats outliers as signal, absolute error
+  treats them as noise (exercise 2).
 
 ## Run
 

@@ -9,6 +9,7 @@ Each lesson is a folder containing:
 | file | purpose |
 |---|---|
 | `NN_<topic>.ipynb` | the lesson: equations in LaTeX, derivations, plots, step-by-step build |
+| `NN_exercise_solutions.ipynb` | worked answers to the end-of-lesson exercises |
 | `<topic>.py` | the clean reference implementation, importable by later lessons |
 | `test_<topic>.py` | tests, including numerical gradient checks |
 | `README.md` | one-page summary of the formulas |
