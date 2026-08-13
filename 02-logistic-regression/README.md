@@ -5,7 +5,9 @@ positive class, and a threshold turns that probability into a predicted label.
 
 Work through [`02_logistic_regression.ipynb`](02_logistic_regression.ipynb) first. It
 derives everything and plots it. [`logistic_regression.py`](logistic_regression.py) is the
-clean version of the same code.
+clean version of the same code. [`02_exercise_solutions.ipynb`](02_exercise_solutions.ipynb)
+works the five end-of-lesson exercises: reading weights as odds ratios, making squared
+error stall on purpose, class imbalance, perfect separation, and mini-batch training.
 
 ## The formulas
 
@@ -66,6 +68,11 @@ Also available: `accuracy`, `confusion_matrix`, `precision_recall_f1`.
   precision or recall based on which mistake is more costly.
 - The boundary is linear in whatever features you supply. Adding squared features gives an
   elliptical boundary in the original space.
+- Changing the threshold slides the boundary parallel to itself, to where
+  $w \cdot x + b = \log\frac{t}{1-t}$. It never rotates it (exercise 3).
+- On perfectly separable data there is no finite optimum. The weights grow without bound
+  and buy confidence rather than correctness, which is what regularisation fixes
+  (exercise 4).
 
 ## Run
 
