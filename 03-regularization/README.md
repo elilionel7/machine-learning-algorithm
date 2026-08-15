@@ -5,7 +5,9 @@ gap between training error and test error, then closes it by penalising large we
 
 Work through [`03_regularization.ipynb`](03_regularization.ipynb) first. It derives
 everything and plots it. [`regularization.py`](regularization.py) is the clean version of
-the same code.
+the same code. [`03_exercise_solutions.ipynb`](03_exercise_solutions.ipynb) works the five
+end-of-lesson exercises: ridge as data augmentation, early stopping as regularisation, the
+one standard error rule, lasso on irrelevant features, and learning curves.
 
 ## The formulas
 
@@ -78,6 +80,13 @@ Also available: `polynomial_features`, `train_test_split`, `k_fold_indices`,
   validation.
 - Small held out sets give noisy scores. A measured test error can fall below the noise
   variance even though the noise variance is the floor in expectation.
+- Ridge is exactly ordinary least squares on data augmented with $n$ rows of
+  $\sqrt{\lambda}I$ and zero targets, which is one identity that explains both the
+  conditioning fix and the Bayesian reading (exercise 1).
+- Gradient descent grows $\|w\|$ from zero, so the iteration count is itself a weight
+  budget. Early stopping regularises whether you meant it to or not (exercise 2).
+- Learning curves say whether more data will help. A closed gap means high bias and more
+  data will not help; an open gap means high variance and it will (exercise 5).
 
 ## Run
 
