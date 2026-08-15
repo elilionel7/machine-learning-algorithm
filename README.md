@@ -21,9 +21,7 @@ Each lesson is a folder containing:
 | [01](01-linear-regression/) | Linear regression | model, mean squared error, gradient descent, learning rate, feature scaling, normal equation |
 | [02](02-logistic-regression/) | Logistic regression | sigmoid, log-odds, cross-entropy, decision boundary, precision and recall, numerical stability |
 | [03](03-regularization/) | Regularisation | overfitting, bias and variance, ridge and lasso, weight decay, cross validation |
-| 04 | Neural networks | forward pass, backpropagation |
-
-(04 onward is planned, not written yet.)
+| [04](04-neural-networks/) | Neural networks | forward pass, backpropagation, activations, initialisation, softmax |
 
 ## Setup
 
@@ -44,6 +42,7 @@ Without it, notebooks get committed with their outputs.
 python 01-linear-regression/linear_regression.py
 python 02-logistic-regression/logistic_regression.py
 python 03-regularization/regularization.py
+python 04-neural-networks/neural_network.py
 
 # the tests for one lesson
 python -m pytest 01-linear-regression -q
@@ -64,3 +63,17 @@ top-to-bottom to see its plots.
 - `y` has shape `(m,)`, `w` has shape `(n,)`, `b` is a scalar
 - superscript $(i)$ indexes examples, subscript $j$ indexes features
 - every hand-derived gradient gets a numerical (finite-difference) check in the tests
+
+## The one idea
+
+All four lessons run the same loop, and only the first box ever changes:
+
+```
+model  ->  cost  ->  gradient  ->  gradient descent
+```
+
+Linear regression fixed the model as a line and the cost as squared error. Logistic
+regression wrapped the line in a sigmoid and switched to cross-entropy. Regularisation
+added a penalty term to the cost. Neural networks stacked the model and reached the
+gradient with the chain rule. The optimiser is the same code in all four, and the
+expression `prediction - label` shows up in every one of them.
