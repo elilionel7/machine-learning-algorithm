@@ -20,10 +20,10 @@ Each lesson is a folder containing:
 |---|---|---|
 | [01](01-linear-regression/) | Linear regression | model, mean squared error, gradient descent, learning rate, feature scaling, normal equation |
 | [02](02-logistic-regression/) | Logistic regression | sigmoid, log-odds, cross-entropy, decision boundary, precision and recall, numerical stability |
-| 03 | Regularisation | overfitting, ridge and lasso, bias and variance |
+| [03](03-regularization/) | Regularisation | overfitting, bias and variance, ridge and lasso, weight decay, cross validation |
 | 04 | Neural networks | forward pass, backpropagation |
 
-(03 onward are planned, not written yet.)
+(04 onward is planned, not written yet.)
 
 ## Setup
 
@@ -43,6 +43,7 @@ Without it, notebooks get committed with their outputs.
 # the reference implementation's built-in demo
 python 01-linear-regression/linear_regression.py
 python 02-logistic-regression/logistic_regression.py
+python 03-regularization/regularization.py
 
 # the tests for one lesson
 python -m pytest 01-linear-regression -q
